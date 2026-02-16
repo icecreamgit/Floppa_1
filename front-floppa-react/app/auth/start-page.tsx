@@ -1,14 +1,46 @@
+'use client'
 import '../../app/css-classes/home.css';
-import Image from 'next/image';
+import {AuthOptions} from '../enums/authEnums';
 import FloppaIcon from '../../images/floppa.svg';
+import { useState } from 'react';
 
-// const FloppaIcon = require('../../images/floppa.svg');
+
+export type inputPlaceHolder = 'firstNAme' | 'lastName' | 'email' | 'login' | 'password';
 
 const StartPage = () => {
     const mainButtonRu: string = 'Главная';
     const welcomeStringRu: string = 'Добро пожаловать в мессенджер Floppa';
     const signUpRu: string = 'Зарегистрироваться';
     const signInRu: string = 'Войти в аккаунт';
+    const inputPlaceHolderRu: Record<inputPlaceHolder, string> = {
+      firstNAme: 'Имя',
+      lastName: 'Фамилия',
+      email: 'Почта',
+      login: 'Логин',
+      password: 'Пароль'
+    };
+
+    const [loginStatus, setLoginStatus] = useState<AuthOptions | null>(null);
+
+    const signUp = () => {
+      return (
+      <div>
+        <input className='main-input' placeholder={inputPlaceHolderRu.firstNAme} />
+        <input className='main-input' placeholder={inputPlaceHolderRu.lastName} />
+        <input className='main-input' placeholder={inputPlaceHolderRu.email} />
+      </div>
+      );
+    };
+
+    const signOn = () => {
+      return (
+      <div>
+        <input className='main-input' placeholder={inputPlaceHolderRu.login} />
+        <input className='main-input' placeholder={inputPlaceHolderRu.password} />
+      </div>
+      );
+    };
+
   return (
     <div className='flex flex-col h-screen'>
       <header className="flex w-full justify-center content-center flex-wrap header">
@@ -29,20 +61,27 @@ const StartPage = () => {
           <span className='text-[2rem] mb-[1rem] text-col'>
             {welcomeStringRu}
           </span>
+
+          {loginStatus === null ?
           <div>
-            <button className='main-button'>
-              <span className='text-[1.5rem] text-col'>
-                {signUpRu}
-              </span>
-            </button>
+            <div>
+              <button onClick={() => {setLoginStatus(AuthOptions.SignUp)}} className='main-button'>
+                <span className='text-[1.5rem] text-col'>
+                  {signUpRu}
+                </span>
+              </button>
+            </div>
+            <div>
+              <button onClick={() => {setLoginStatus(AuthOptions.SignIn)}} className='main-button'>
+                <span className='text-[1.5rem] text-col'>
+                  {signInRu}
+                </span>
+              </button>
+            </div>
           </div>
-          <div>
-            <button className='main-button'>
-              <span className='text-[1.5rem] text-col'>
-                {signInRu}
-              </span>
-            </button>
-          </div>
+          : <div></div>
+        }
+          
         </div>
       </div>
       

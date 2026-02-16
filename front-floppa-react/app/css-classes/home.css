@@ -1,0 +1,25 @@
+.header {
+    height: 60px;
+    background-color: var(--color-header);
+}
+
+.header-button {
+    width: 11rem;
+    height: 2.82rem;
+    background-color: var(--color-buttons);
+    border-radius: 8px;
+}
+
+.main-button {
+    width: 19rem;
+    height: 4.2rem;
+    background-color: var(--color-buttons);
+    border-radius: 8px;
+    margin: 1rem;
+}
+
+
+.text-col {
+  color: var(--color-black);
+  font-weight: bold;
+}

@@ -23,6 +23,13 @@
     height: 4.2rem;
     border-radius: 8px;
     margin: 1rem;
+
+    border: 2px solid;
+    color: var(--color-black);
+    padding:0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    
 }
 
 .text-col {

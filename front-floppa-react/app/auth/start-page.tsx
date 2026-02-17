@@ -2,10 +2,11 @@
 import '../../app/css-classes/home.css';
 import {AuthOptions} from '../enums/authEnums';
 import FloppaIcon from '../../images/floppa.svg';
+import {IInput} from '../interfaces/IInput';
 import { useState } from 'react';
 
 
-export type inputPlaceHolder = 'firstNAme' | 'lastName' | 'email' | 'login' | 'password';
+export type inputPlaceHolder = 'firstName' | 'lastName' | 'email' | 'login' | 'password';
 
 const StartPage = () => {
     const mainButtonRu: string = 'Главная';
@@ -13,7 +14,7 @@ const StartPage = () => {
     const signUpRu: string = 'Зарегистрироваться';
     const signInRu: string = 'Войти в аккаунт';
     const inputPlaceHolderRu: Record<inputPlaceHolder, string> = {
-      firstNAme: 'Имя',
+      firstName: 'Имя',
       lastName: 'Фамилия',
       email: 'Почта',
       login: 'Логин',
@@ -22,24 +23,25 @@ const StartPage = () => {
 
     const [loginStatus, setLoginStatus] = useState<AuthOptions | null>(null);
 
-    const signUp = () => {
-      return (
-      <div>
-        <input className='main-input' placeholder={inputPlaceHolderRu.firstNAme} />
-        <input className='main-input' placeholder={inputPlaceHolderRu.lastName} />
-        <input className='main-input' placeholder={inputPlaceHolderRu.email} />
-      </div>
-      );
-    };
+    const signUpInputs: IInput[] = [
+        {id: inputPlaceHolderRu.firstName, content: inputPlaceHolderRu.firstName},
+        {id: inputPlaceHolderRu.lastName, content: inputPlaceHolderRu.lastName},
+        {id: inputPlaceHolderRu.email, content: inputPlaceHolderRu.email}
+      ]; 
 
-    const signOn = () => {
+    const signInInputs: IInput[] = [
+        {id: inputPlaceHolderRu.login, content: inputPlaceHolderRu.login},
+        {id: inputPlaceHolderRu.password, content: inputPlaceHolderRu.password},
+    ];
+
+    const signForm = (input: IInput) => {
       return (
-      <div>
-        <input className='main-input' placeholder={inputPlaceHolderRu.login} />
-        <input className='main-input' placeholder={inputPlaceHolderRu.password} />
-      </div>
+        <div key={input.id}>
+          <label htmlFor={input.id}></label>
+          <input id={input.id} placeholder={input.content} className='main-input' />
+        </div>
       );
-    };
+    }
 
   return (
     <div className='flex flex-col h-screen'>
@@ -71,6 +73,33 @@ const StartPage = () => {
                 </span>
               </button>
             </div>
+            <div>
+              <button onClick={() => {setLoginStatus(AuthOptions.SignIn)}} className='main-button'>
+                <span className='text-[1.5rem] text-col'>
+                  {signInRu}
+                </span>
+              </button>
+            </div>
+          </div>
+
+          : loginStatus === AuthOptions.SignUp ?
+          <div>
+            {signUpInputs.map((input: IInput) => {
+              return ( signForm(input) );
+            })}
+            <div>
+              <button onClick={() => {setLoginStatus(AuthOptions.SignUp)}} className='main-button'>
+                <span className='text-[1.5rem] text-col'>
+                  {signUpRu}
+                </span>
+              </button>
+            </div>
+          </div>
+          : loginStatus === AuthOptions.SignIn ?
+          <div>
+            {signInInputs.map((input: IInput) => {
+              return (signForm(input));
+            })}
             <div>
               <button onClick={() => {setLoginStatus(AuthOptions.SignIn)}} className='main-button'>
                 <span className='text-[1.5rem] text-col'>

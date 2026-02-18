@@ -1,10 +1,7 @@
-import StartPage from '../app/auth/start-page';
+import { redirect } from 'next/navigation';
 
 const Home = () => {
-  const mainRu: string = 'Главная';
-  return (
-    <StartPage />
-  );
+    redirect('/auth');
 }
 
 export default Home;

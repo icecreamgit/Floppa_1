@@ -4,6 +4,7 @@ import {AuthOptions} from '../enums/authEnums';
 import FloppaIcon from '../../images/floppa.svg';
 import {IInput} from '../interfaces/IInput';
 import { useState } from 'react';
+import Link from 'next/link';
 
 
 export type inputPlaceHolder = 'firstName' | 'lastName' | 'email' | 'login' | 'password';
@@ -47,7 +48,7 @@ const StartPage = () => {
     <div className='flex flex-col h-screen'>
       <header className="flex w-full justify-center content-center flex-wrap header">
         <nav className='flex flex-row'>
-          <button className='header-button' >
+          <button onClick={() => {setLoginStatus(null)}} className='header-button' >
             <span className='text-[1.5rem]'>
               {mainButtonRu}
             </span>
@@ -89,9 +90,11 @@ const StartPage = () => {
             })}
             <div>
               <button onClick={() => {setLoginStatus(AuthOptions.SignUp)}} className='main-button'>
-                <span className='text-[1.5rem] text-col'>
-                  {signUpRu}
-                </span>
+                <Link href='/main'>
+                  <span className='text-[1.5rem] text-col'>
+                    {signUpRu}
+                  </span>
+                </Link>
               </button>
             </div>
           </div>

@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "Floppa.Controllers.AuthController",
+    "Method": "GetResponse",
+    "RelativePath": "api/Auth",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]

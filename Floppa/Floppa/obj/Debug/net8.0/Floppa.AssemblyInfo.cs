@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Floppa")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e1e6f0b14d03337a9db56a3096e438f56f3558f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4d2b8701ca390f9b6126215b94a64f61d37b86b")]
 [assembly: System.Reflection.AssemblyProductAttribute("Floppa")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Floppa")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

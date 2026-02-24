@@ -1,7 +1,17 @@
+using EFLibrary;
+using Floppa.Interfaces;
+using Floppa.Services;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("PgConnection");
+
+builder.Services.AddDbContext<AppPostgresContext>(options => options.UseNpgsql(connectionString));
 
 // Add services to the container.
 
+builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

@@ -1,15 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Floppa.Interfaces;
+using Floppa.Models.DTOs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Floppa.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController : ControllerBase
+    public class AuthController(IAuthService authService) : ControllerBase
     {
         [HttpPost]
         [Route("SignUp")]
-        public async Task<IActionResult> SignUp()
+        public async Task<IActionResult> SignUp(RegisterUser registerUser)
         {
+            await authService.SignUpUserAsync(registerUser);
             return Ok();
         }
 

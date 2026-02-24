@@ -1,9 +1,19 @@
 [
   {
     "ContainingType": "Floppa.Controllers.AuthController",
-    "Method": "GetResponse",
-    "RelativePath": "api/Auth",
-    "HttpMethod": "GET",
+    "Method": "SignIn",
+    "RelativePath": "api/Auth/SignIn",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Floppa.Controllers.AuthController",
+    "Method": "SignUp",
+    "RelativePath": "api/Auth/SignUp",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

@@ -5,8 +5,20 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth": {
-      "get": {
+    "/api/Auth/SignUp": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/SignIn": {
+      "post": {
         "tags": [
           "Auth"
         ],

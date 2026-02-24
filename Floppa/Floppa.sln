@@ -5,6 +5,8 @@ VisualStudioVersion = 17.14.36518.9 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Floppa", "Floppa\Floppa.csproj", "{596B5A6E-F173-4E9F-A809-B4BC707E7A30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFLibrary", "EFLibrary\EFLibrary.csproj", "{4CB8336F-1514-4F03-9E7F-5A3ED0830D2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{596B5A6E-F173-4E9F-A809-B4BC707E7A30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{596B5A6E-F173-4E9F-A809-B4BC707E7A30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{596B5A6E-F173-4E9F-A809-B4BC707E7A30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CB8336F-1514-4F03-9E7F-5A3ED0830D2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB8336F-1514-4F03-9E7F-5A3ED0830D2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB8336F-1514-4F03-9E7F-5A3ED0830D2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB8336F-1514-4F03-9E7F-5A3ED0830D2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
